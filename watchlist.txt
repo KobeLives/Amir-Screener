@@ -1,0 +1,9 @@
+# Amir's Custom Watchlist
+# ========================
+# Add tickers here that you ALWAYS want scanned, one per line.
+# These bypass the normal universe selection and are checked every run.
+# Lines starting with # are comments.
+# You can also use comma-separated: AAPL, TSLA, NVDA
+
+SGN
+MRNO
