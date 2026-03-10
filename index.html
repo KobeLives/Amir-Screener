@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir's Watchlist V2 — March 10, 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e17; color: #c8d6e5; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        h1 { color: #00d4aa; font-size: 28px; margin-bottom: 5px; }
+        .subtitle { color: #636e72; margin-bottom: 24px; font-size: 14px; }
+        .summary-bar { display: flex; gap: 20px; margin-bottom: 24px; padding: 12px 16px; background: #111827; border-radius: 8px; border: 1px solid #1a2332; }
+        .summary-stat { text-align: center; }
+        .summary-stat .label { font-size: 11px; color: #636e72; text-transform: uppercase; letter-spacing: 1px; }
+        .summary-stat .value { font-size: 20px; font-weight: bold; color: #00d4aa; }
+
+        .card { background: #111827; border: 1px solid #1a2332; border-radius: 8px; margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s; }
+        .card:hover { border-color: #00d4aa33; }
+        .card.expanded .card-body { display: block; }
+        .card.expanded .card-expand { transform: rotate(180deg); }
+
+        .card-header { display: flex; align-items: center; padding: 14px 16px; cursor: pointer; gap: 16px; }
+        .card-header:hover { background: #1a2332; }
+        .card-rank { color: #636e72; font-weight: bold; font-size: 14px; min-width: 30px; }
+        .card-ticker { flex: 0 0 180px; }
+        .card-ticker strong { color: #00d4aa; font-size: 18px; }
+        .card-name { color: #636e72; font-size: 11px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
+        .card-price { font-size: 16px; font-weight: 600; min-width: 70px; }
+        .card-score { font-size: 18px; font-weight: bold; min-width: 40px; text-align: center; }
+        .score-high { color: #00d4aa; }
+        .score-mid { color: #ffd700; }
+        .score-low { color: #ff6b6b; }
+        .card-vol { min-width: 80px; }
+        .vol-ratio-badge { background: #ff6b6b22; color: #ff6b6b; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .card-flags { flex: 1; }
+        .card-expand { color: #636e72; font-size: 12px; transition: transform 0.2s; }
+
+        .card-body { display: none; padding: 0 16px 16px; border-top: 1px solid #1a2332; }
+
+        .card-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 16px 0; }
+        .metric { background: #0a0e17; padding: 10px 12px; border-radius: 6px; }
+        .metric-label { font-size: 10px; color: #636e72; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .metric-value { font-size: 14px; font-weight: 600; }
+        .trade-setup { border: 1px solid #1a2332; }
+
+        .positive { color: #00d4aa; }
+        .negative { color: #ff6b6b; }
+
+        .flag { display: inline-block; background: #ff6b6b22; color: #ff6b6b; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin: 2px; }
+        .insider-badge { background: #ffd70022; color: #ffd700; padding: 8px 12px; border-radius: 6px; margin: 12px 0; font-size: 13px; }
+        .support-resistance-section { margin: 12px 0; padding: 12px; background: #0a0e17; border-radius: 6px; }
+        .support-resistance-section h4 { color: #636e72; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .support-resistance-section p { font-size: 13px; color: #a0b0c0; }
+
+        .news-section { margin: 12px 0; }
+        .news-section h4 { color: #636e72; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .news-section ul { list-style: none; }
+        .news-section li { font-size: 12px; color: #8395a7; padding: 4px 0; border-bottom: 1px solid #1a2332; }
+
+        .reasoning-section { margin: 16px 0; padding: 16px; background: #0d1321; border-radius: 8px; border-left: 3px solid #00d4aa; }
+        .reasoning-section h4 { color: #00d4aa; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .reasoning-section p { font-size: 13px; line-height: 1.6; color: #a0b0c0; margin-bottom: 10px; }
+        .reasoning-section strong { color: #ffd700; }
+
+        .feedback-section { margin: 16px 0; padding: 16px; background: #0d1321; border-radius: 8px; border-left: 3px solid #4a6fa5; }
+        .feedback-section h4 { color: #4a6fa5; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .feedback-buttons { display: flex; gap: 10px; margin-bottom: 10px; }
+        .btn-yes, .btn-no { padding: 8px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s; }
+        .btn-yes { background: #00d4aa33; color: #00d4aa; border: 1px solid #00d4aa55; }
+        .btn-yes:hover, .btn-yes.active { background: #00d4aa; color: #0a0e17; }
+        .btn-no { background: #ff6b6b33; color: #ff6b6b; border: 1px solid #ff6b6b55; }
+        .btn-no:hover, .btn-no.active { background: #ff6b6b; color: #0a0e17; }
+        .feedback-notes { width: 100%; background: #0a0e17; border: 1px solid #1a2332; border-radius: 6px; padding: 10px; color: #c8d6e5; font-family: inherit; font-size: 13px; resize: vertical; min-height: 60px; }
+        .feedback-notes:focus { outline: none; border-color: #4a6fa5; }
+
+        .footer { margin-top: 24px; padding: 16px; text-align: center; color: #636e72; font-size: 12px; }
+        .export-bar { text-align: center; margin: 20px 0; }
+        .btn-export { padding: 12px 30px; background: #00d4aa; color: #0a0e17; border: none; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; }
+        .btn-export:hover { background: #00b894; }
+        .save-status { margin-top: 10px; font-size: 14px; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <h1>Amir's Watchlist V2</h1>
+    <div class="subtitle">March 10, 2026 at 11:16 AM -- Click any stock to expand full analysis</div>
+    <div style="color:#636e72;font-size:11px;margin-bottom:12px;padding:6px 12px;background:#111827;border-radius:6px;border:1px solid #1a2332;">
+        Data source: Yahoo Finance (delayed ~15-20 min) + Finviz (end-of-day) | Report generated: 2026-03-10 11:16:43 AM | Not real-time data
+    </div>
+
+    <div class="summary-bar">
+        <div class="summary-stat"><div class="label">Candidates</div><div class="value">12</div></div>
+        <div class="summary-stat"><div class="label">Avg Score</div><div class="value">31</div></div>
+        <div class="summary-stat"><div class="label">Vol/Float > 5%</div><div class="value">6</div></div>
+        <div class="summary-stat"><div class="label">Vol Spikes (3x+)</div><div class="value">3</div></div>
+        <div class="summary-stat"><div class="label">Offering Penalty</div><div class="value negative">3</div></div>
+    </div>
+
+    <div style="background: #111827; border: 1px solid #1a2332; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+        <h3 style="color: #636e72; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">V2 Enhanced Scoring (100 Base, up to -15 Penalty)</h3>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #00d4aa; font-size: 18px; font-weight: bold;">25</div>
+                <div style="color: #636e72; font-size: 11px;">Volume Spike</div>
+                <div style="color: #4a5568; font-size: 10px;">3x-10x+ avg vol</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #ffd700; font-size: 18px; font-weight: bold;">15</div>
+                <div style="color: #636e72; font-size: 11px;">Vol/Float Ratio</div>
+                <div style="color: #4a5568; font-size: 10px;">Vol as % of float</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #00d4aa; font-size: 18px; font-weight: bold;">20</div>
+                <div style="color: #636e72; font-size: 11px;">Volume Trend</div>
+                <div style="color: #4a5568; font-size: 10px;">3+ consec days up</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #00d4aa; font-size: 18px; font-weight: bold;">15</div>
+                <div style="color: #636e72; font-size: 11px;">Low Float</div>
+                <div style="color: #4a5568; font-size: 10px;">3M-15M shares</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #00d4aa; font-size: 18px; font-weight: bold;">10</div>
+                <div style="color: #636e72; font-size: 11px;">Typical Price Position</div>
+                <div style="color: #4a5568; font-size: 10px;">Price above Typical Price</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #ffd700; font-size: 18px; font-weight: bold;">5</div>
+                <div style="color: #636e72; font-size: 11px;">Range Position</div>
+                <div style="color: #4a5568; font-size: 10px;">Bottom 25% of 52w</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #00d4aa; font-size: 18px; font-weight: bold;">5</div>
+                <div style="color: #636e72; font-size: 11px;">Small Cap</div>
+                <div style="color: #4a5568; font-size: 10px;">Market cap &lt;$20M</div>
+            </div>
+            <div style="background: #0a0e17; padding: 10px; border-radius: 6px; text-align: center;">
+                <div style="color: #00d4aa; font-size: 18px; font-weight: bold;">5</div>
+                <div style="color: #636e72; font-size: 11px;">Momentum</div>
+                <div style="color: #4a5568; font-size: 10px;">Price &gt; 10-day MA</div>
+            </div>
+        </div>
+        <div style="margin-top: 10px; display: flex; gap: 8px; justify-content: center;">
+            <div style="background: #ff6b6b22; color: #ff6b6b; padding: 6px 14px; border-radius: 6px; font-size: 12px; text-align: center;">
+                <strong>-15 max</strong> Offering Penalty (2+ S-1/S-3 filings in 12mo)
+            </div>
+        </div>
+        <div style="margin-top: 8px; text-align: center; color: #4a5568; font-size: 10px;">
+            Also displays: Short Interest | Support/Resistance Levels | Sector Tag
+        </div>
+    </div>
+
+    
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#1</div>
+                <div class="card-ticker">
+                    <strong>MRNO</strong>
+                    <span class="card-name">Murano Global Investments PLC</span>
+                </div>
+                <div class="card-price">$0.95</div>
+                <div class="card-score score-high">82</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">338.3x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (338.3459318670415x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$75.0M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$1.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">6066.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">81.8M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">242K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">1d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">4%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.49 — $13.25</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">20.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value positive">$0.94 (ABOVE)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$0.68</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$1.0</div>
+                    </div>
+                    
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$0.85</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$1.42</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.04, $0.81, $0.66<br/>Resistance: $0.95, $0.88, $1.98</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> MRNO traded 81.8M shares today — that&#x27;s 338.3x the 10-day average of 242K. This kind of extreme spike in a low-float name often means someone knows something before it&#x27;s public.</p><p>Volume represents 6066.1% of total float — this is a massive signal. When volume is this high relative to available shares, even small catalysts can spark explosive moves.</p><p>Very low float: only $1.3M shares. With this few shares in circulation, even moderate buying pressure can cause outsized moves. If volume picks up further, this could run fast.</p><p>Market cap is $75.0M — on the larger end of the target range.</p><p>Price is $0.95, trading above the 10-day MA ($0.68) and below the 50-day MA ($1.0).</p><p>Trading ABOVE Typical Price ($0.94) — institutional buyers are supporting this level. Positive sign for continuation.</p><p>52-week range: $0.49 — $13.25. Stock is at 4% of its range. Near the bottom — potential deep value with room to run.</p><p>Short interest is 20.2% — elevated. High short interest can create squeeze dynamics if positive news drops.</p><p>Key levels to watch: Support at $1.04, $0.81, $0.66 | Resistance at $0.95, $0.88, $1.98</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $0.95, stop loss at $0.85 (-10%), target $1.42 (+50%). Daily range today was $0.65–$1.22.</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 82/100 (base 100) — Vol Spike: 25/25 | Vol/Float: 15/15 | Vol Trend: 7/20 | Low Float: 15/15 | Range Pos: 5/5 | Small Cap: 0/5 | Typical Price: 10/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('MRNO', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('MRNO', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-MRNO"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#2</div>
+                <div class="card-ticker">
+                    <strong>SGN</strong>
+                    <span class="card-name">Signing Day Sports, Inc.</span>
+                </div>
+                <div class="card-price">$0.59</div>
+                <div class="card-score score-mid">67</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">8.6x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">Volume spike (8.5638621447229x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$8.1M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$3.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">4931.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">182.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">21.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">2d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">12%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.11 — $4.27</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">70.0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$0.67 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$0.53</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$0.42</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">4</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$0.53</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$0.89</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $0.37, $0.33, $0.17<br/>Resistance: $0.61, $0.35, $0.89</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 182.6M shares today vs. 21.3M average (8.6x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume has ticked up 2 days in a row. Not yet a strong trend, but keep on radar.</p><p>Volume represents 4931.9% of total float — this is a massive signal. When volume is this high relative to available shares, even small catalysts can spark explosive moves.</p><p>Very low float: only $3.7M shares. With this few shares in circulation, even moderate buying pressure can cause outsized moves. If volume picks up further, this could run fast.</p><p>Small cap at $8.1M. Still in the zone where catalysts can move the needle.</p><p>Price is $0.59, trading above the 10-day MA ($0.53) and above the 50-day MA ($0.42).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($0.67). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $0.11 — $4.27. Stock is at 12% of its range. Near the bottom — potential deep value with room to run.</p><p>Short interest is 70.0% — elevated. High short interest can create squeeze dynamics if positive news drops.</p><p>Key levels to watch: Support at $0.37, $0.33, $0.17 | Resistance at $0.61, $0.35, $0.89</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $0.59, stop loss at $0.53 (-10%), target $0.89 (+50%). Daily range today was $0.58–$0.82.</p><p>SEC filing history: 4 offering(s) in last 12 months. (Score penalty: -15 pts)</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 67/100 (base 100 — Offering penalty: -15) — Vol Spike: 25/25 | Vol/Float: 15/15 | Vol Trend: 14/20 | Low Float: 15/15 | Range Pos: 5/5 | Small Cap: 3/5 | Typical Price: 0/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('SGN', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('SGN', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-SGN"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#3</div>
+                <div class="card-ticker">
+                    <strong>ADTX</strong>
+                    <span class="card-name">Aditxt, Inc.</span>
+                </div>
+                <div class="card-price">$2.85</div>
+                <div class="card-score score-mid">52.4</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">3.1x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">Volume spike (3.1366950503751387x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:05 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">632K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">69K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">197.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">136K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">43K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$2.56 — $14012.0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">2.3%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$2.93 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$3.64</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$5.93</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">1</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.56</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$4.27</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $3.44, $4.64, $5.63<br/>Resistance: $6.31, $6.4, $7.74</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 136K shares today vs. 43K average (3.1x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume represents 197.1% of total float — this is a massive signal. When volume is this high relative to available shares, even small catalysts can spark explosive moves.</p><p>Very low float: only 69K shares. With this few shares in circulation, even moderate buying pressure can cause outsized moves. If volume picks up further, this could run fast.</p><p>Micro-cap territory at 632K market cap. High risk, high reward potential.</p><p>Price is $2.85, trading below the 10-day MA ($3.64) and below the 50-day MA ($5.93).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($2.93). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $2.56 — $14012.0. Stock is at 0% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels to watch: Support at $3.44, $4.64, $5.63 | Resistance at $6.31, $6.4, $7.74</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $2.85, stop loss at $2.56 (-10%), target $4.27 (+50%). Daily range today was $2.56–$3.4.</p><p>SEC filing history: 1 offering(s) in last 12 months.</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 52.4/100 (base 100) — Vol Spike: 12.3/25 | Vol/Float: 15/15 | Vol Trend: 0/20 | Low Float: 15/15 | Range Pos: 5/5 | Small Cap: 5/5 | Typical Price: 0/10 | Momentum: 0/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('ADTX', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('ADTX', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-ADTX"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#4</div>
+                <div class="card-ticker">
+                    <strong>SAVA</strong>
+                    <span class="card-name">Cassava Sciences, Inc.</span>
+                </div>
+                <div class="card-price">$2.37</div>
+                <div class="card-score score-low">36</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">2.2x vol</span>
+                </div>
+                <div class="card-flags"></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$114.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$43.0M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">4.0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">1.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">788K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">1d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">32%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.15 — $4.98</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">14.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value positive">$2.35 (ABOVE)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$2.22</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$2.12</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">1</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.13</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$3.55</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.1, $1.97, $2.77<br/>Resistance: $2.34, $2.28, $2.49</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 1.7M today vs. 788K average (2.2x). Not a major spike yet, but passed other filters.</p><p>Volume represents 4.0% of total float — reasonable activity for a micro-cap.</p><p>Market cap is $114.2M — on the larger end of the target range.</p><p>Price is $2.37, trading above the 10-day MA ($2.22) and above the 50-day MA ($2.12).</p><p>Trading ABOVE Typical Price ($2.35) — institutional buyers are supporting this level. Positive sign for continuation.</p><p>52-week range: $1.15 — $4.98. Stock is at 32% of its range. Mid-range.</p><p>Short interest is 14.9% — notable, but not extreme.</p><p>Key levels to watch: Support at $2.1, $1.97, $2.77 | Resistance at $2.34, $2.28, $2.49</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $2.37, stop loss at $2.13 (-10%), target $3.55 (+50%). Daily range today was $2.19–$2.49.</p><p>SEC filing history: 1 offering(s) in last 12 months.</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 36/100 (base 100) — Vol Spike: 6/25 | Vol/Float: 5/15 | Vol Trend: 7/20 | Low Float: 0/15 | Range Pos: 3/5 | Small Cap: 0/5 | Typical Price: 10/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('SAVA', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('SAVA', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-SAVA"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#5</div>
+                <div class="card-ticker">
+                    <strong>EDSA</strong>
+                    <span class="card-name">Edesa Biotech, Inc.</span>
+                </div>
+                <div class="card-price">$6.51</div>
+                <div class="card-score score-low">35</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.1x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:14 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$54.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$4.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">36.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">1.5M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">23.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">72%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.72 — $8.74</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">0.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$6.77 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$3.98</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$1.83</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">1</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$5.86</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$9.77</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $3.55, $1.44, $0.94<br/>Resistance: $1.78, $1.61, $1.57</p></div>
+
+                <div class="insider-badge">6 Form 4 filing(s) in last 30 days | BUYING: 8 transaction(s), 93,587 shares acquired | NET: Insider buying | Insiders: Nijhawan Pardeep</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 1.5M today vs. 23.4M average (0.1x). Not a major spike yet, but passed other filters.</p><p>Volume represents 36.1% of total float — this is a massive signal. When volume is this high relative to available shares, even small catalysts can spark explosive moves.</p><p>Very low float: only $4.2M shares. With this few shares in circulation, even moderate buying pressure can cause outsized moves. If volume picks up further, this could run fast.</p><p>Market cap is $54.3M — on the larger end of the target range.</p><p>Price is $6.51, trading above the 10-day MA ($3.98) and above the 50-day MA ($1.83).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($6.77). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $0.72 — $8.74. Stock is at 72% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Key levels to watch: Support at $3.55, $1.44, $0.94 | Resistance at $1.78, $1.61, $1.57</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $6.51, stop loss at $5.86 (-10%), target $9.77 (+50%). Daily range today was $6.21–$7.6.</p><p>SEC filing history: 1 offering(s) in last 12 months.</p><p><strong>INSIDER ACTIVITY:</strong> 6 Form 4 filing(s) in last 30 days | BUYING: 8 transaction(s), 93,587 shares acquired | NET: Insider buying | Insiders: Nijhawan Pardeep</p><p>Net insider buying detected — bullish signal.</p><p><strong>SCORE:</strong> 35/100 (base 100) — Vol Spike: 0/25 | Vol/Float: 15/15 | Vol Trend: 0/20 | Low Float: 15/15 | Range Pos: 0/5 | Small Cap: 0/5 | Typical Price: 0/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('EDSA', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('EDSA', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-EDSA"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#6</div>
+                <div class="card-ticker">
+                    <strong>USEG</strong>
+                    <span class="card-name">U.S. Energy Corp.</span>
+                </div>
+                <div class="card-price">$1.07</div>
+                <div class="card-score score-low">25</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.3x vol</span>
+                </div>
+                <div class="card-flags"></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$47.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$18.5M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">38.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">7.1M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">21.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.91 — $2.75</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">6.6%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value positive">$1.06 (ABOVE)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$1.12</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$1.03</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">2</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$0.96</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$1.6</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.0, $0.98, $0.97<br/>Resistance: $1.06, $1.09, $1.03</p></div>
+
+                <div class="insider-badge">9 Form 4 filing(s) in last 30 days | BUYING: 5 transaction(s), 2.8M shares acquired | SELLING: 1 transaction(s), 20,490 shares disposed | NET: Insider buying | Insiders: King Duane H, Smith Ryan Lewis, Weinzierl John A</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 7.1M today vs. 21.7M average (0.3x). Not a major spike yet, but passed other filters.</p><p>Volume represents 38.2% of total float — this is a massive signal. When volume is this high relative to available shares, even small catalysts can spark explosive moves.</p><p>Market cap is $47.4M — on the larger end of the target range.</p><p>Price is $1.07, trading below the 10-day MA ($1.12) and above the 50-day MA ($1.03).</p><p>Trading ABOVE Typical Price ($1.06) — institutional buyers are supporting this level. Positive sign for continuation.</p><p>52-week range: $0.91 — $2.75. Stock is at 9% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels to watch: Support at $1.0, $0.98, $0.97 | Resistance at $1.06, $1.09, $1.03</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $1.07, stop loss at $0.96 (-10%), target $1.6 (+50%). Daily range today was $1.02–$1.09.</p><p>SEC filing history: 2 offering(s) in last 12 months. (Score penalty: -5 pts)</p><p><strong>INSIDER ACTIVITY:</strong> 9 Form 4 filing(s) in last 30 days | BUYING: 5 transaction(s), 2.8M shares acquired | SELLING: 1 transaction(s), 20,490 shares disposed | NET: Insider buying | Insiders: King Duane H, Smith Ryan Lewis, Weinzierl John A</p><p>Net insider buying detected — bullish signal.</p><p><strong>SCORE:</strong> 25/100 (base 100 — Offering penalty: -5) — Vol Spike: 0/25 | Vol/Float: 15/15 | Vol Trend: 0/20 | Low Float: 0/15 | Range Pos: 5/5 | Small Cap: 0/5 | Typical Price: 10/10 | Momentum: 0/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('USEG', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('USEG', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-USEG"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#7</div>
+                <div class="card-ticker">
+                    <strong>CNTB</strong>
+                    <span class="card-name">Connect Biopharma Holdings Limi</span>
+                </div>
+                <div class="card-price">$2.91</div>
+                <div class="card-score score-low">20</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">1.2x vol</span>
+                </div>
+                <div class="card-flags"></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:14 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$162.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$12.8M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">1.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">146K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">119K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">87%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.51 — $3.28</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">0.8%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value positive">$2.85 (ABOVE)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$2.57</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$2.51</div>
+                    </div>
+                    
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.62</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$4.37</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.42, $2.27, $2.23<br/>Resistance: $2.89, $2.88, $2.83</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 146K today vs. 119K average (1.2x). Not a major spike yet, but passed other filters.</p><p>Float is $12.8M — manageable, but heavier than the ideal 3-10M range. Will need stronger catalysts to see a multi-bagger run.</p><p>Market cap is $162.7M — on the larger end of the target range.</p><p>Price is $2.91, trading above the 10-day MA ($2.57) and above the 50-day MA ($2.51).</p><p>Trading ABOVE Typical Price ($2.85) — institutional buyers are supporting this level. Positive sign for continuation.</p><p>52-week range: $0.51 — $3.28. Stock is at 87% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Key levels to watch: Support at $2.42, $2.27, $2.23 | Resistance at $2.89, $2.88, $2.83</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $2.91, stop loss at $2.62 (-10%), target $4.37 (+50%). Daily range today was $2.68–$2.95.</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 20/100 (base 100) — Vol Spike: 0/25 | Vol/Float: 0/15 | Vol Trend: 0/20 | Low Float: 5/15 | Range Pos: 0/5 | Small Cap: 0/5 | Typical Price: 10/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('CNTB', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('CNTB', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-CNTB"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#8</div>
+                <div class="card-ticker">
+                    <strong>ANTX</strong>
+                    <span class="card-name">AN2 Therapeutics, Inc.</span>
+                </div>
+                <div class="card-price">$4.74</div>
+                <div class="card-score score-low">20</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.5x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$129.9M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$16.1M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">19.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">3.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">6.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">63%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.0 — $6.91</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">0.3%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$4.75 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$2.12</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$1.33</div>
+                    </div>
+                    
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$4.27</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$7.11</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.14, $1.13, $1.05<br/>Resistance: $1.35, $1.28, $1.23</p></div>
+
+                <div class="insider-badge">14 Form 4 filing(s) in last 30 days | BUYING: 6 transaction(s), 573,125 shares acquired | SELLING: 2 transaction(s), 77,327 shares disposed | NET: Insider buying | Insiders: Williams Sarah Joanne, Eizen Joshua M, Easom Eric</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 3.2M today vs. 6.7M average (0.5x). Not a major spike yet, but passed other filters.</p><p>Volume represents 19.9% of total float — this is a massive signal. When volume is this high relative to available shares, even small catalysts can spark explosive moves.</p><p>Market cap is $129.9M — on the larger end of the target range.</p><p>Price is $4.74, trading above the 10-day MA ($2.12) and above the 50-day MA ($1.33).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($4.75). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $1.0 — $6.91. Stock is at 63% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Key levels to watch: Support at $1.14, $1.13, $1.05 | Resistance at $1.35, $1.28, $1.23</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $4.74, stop loss at $4.27 (-10%), target $7.11 (+50%). Daily range today was $4.25–$5.25.</p><p><strong>INSIDER ACTIVITY:</strong> 14 Form 4 filing(s) in last 30 days | BUYING: 6 transaction(s), 573,125 shares acquired | SELLING: 2 transaction(s), 77,327 shares disposed | NET: Insider buying | Insiders: Williams Sarah Joanne, Eizen Joshua M, Easom Eric</p><p>Net insider buying detected — bullish signal.</p><p><strong>SCORE:</strong> 20/100 (base 100) — Vol Spike: 0/25 | Vol/Float: 15/15 | Vol Trend: 0/20 | Low Float: 0/15 | Range Pos: 0/5 | Small Cap: 0/5 | Typical Price: 0/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('ANTX', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('ANTX', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-ANTX"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#9</div>
+                <div class="card-ticker">
+                    <strong>OPAL</strong>
+                    <span class="card-name">OPAL Fuels Inc.</span>
+                </div>
+                <div class="card-price">$2.16</div>
+                <div class="card-score score-low">18</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.3x vol</span>
+                </div>
+                <div class="card-flags"></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$375.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$16.8M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">0.3%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">53K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">190K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">32%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.26 — $4.08</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">7.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value positive">$2.15 (ABOVE)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$2.12</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$2.33</div>
+                    </div>
+                    
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.95</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$3.25</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.12, $2.08, $2.28<br/>Resistance: $2.23, $2.26, $2.54</p></div>
+
+                <div class="insider-badge">1 Form 4 filing(s) in last 30 days | BUYING: 1 transaction(s), 3.0M shares acquired | NET: Insider buying | Insiders: Comora Mark S</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 53K today vs. 190K average (0.3x). Not a major spike yet, but passed other filters.</p><p>Market cap is $375.4M — on the larger end of the target range.</p><p>Price is $2.16, trading above the 10-day MA ($2.12) and below the 50-day MA ($2.33).</p><p>Trading ABOVE Typical Price ($2.15) — institutional buyers are supporting this level. Positive sign for continuation.</p><p>52-week range: $1.26 — $4.08. Stock is at 32% of its range. Mid-range.</p><p>Key levels to watch: Support at $2.12, $2.08, $2.28 | Resistance at $2.23, $2.26, $2.54</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $2.16, stop loss at $1.95 (-10%), target $3.25 (+50%). Daily range today was $2.1–$2.19.</p><p><strong>INSIDER ACTIVITY:</strong> 1 Form 4 filing(s) in last 30 days | BUYING: 1 transaction(s), 3.0M shares acquired | NET: Insider buying | Insiders: Comora Mark S</p><p>Net insider buying detected — bullish signal.</p><p><strong>SCORE:</strong> 18/100 (base 100) — Vol Spike: 0/25 | Vol/Float: 0/15 | Vol Trend: 0/20 | Low Float: 0/15 | Range Pos: 3/5 | Small Cap: 0/5 | Typical Price: 10/10 | Momentum: 5/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('OPAL', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('OPAL', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-OPAL"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#10</div>
+                <div class="card-ticker">
+                    <strong>GFAI</strong>
+                    <span class="card-name">Guardforce AI Co., Limited</span>
+                </div>
+                <div class="card-price">$0.57</div>
+                <div class="card-score score-low">8</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.1x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$12.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$20.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">0.5%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">102K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">1.5M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">17%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.38 — $1.5</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">2.6%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$0.57 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$0.58</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$0.56</div>
+                    </div>
+                    
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$0.51</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$0.85</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $0.54, $0.52, $0.51<br/>Resistance: $0.62, $0.5, $0.48</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 102K today vs. 1.5M average (0.1x). Not a major spike yet, but passed other filters.</p><p>Small cap at $12.4M. Still in the zone where catalysts can move the needle.</p><p>Price is $0.57, trading below the 10-day MA ($0.58) and above the 50-day MA ($0.56).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($0.57). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $0.38 — $1.5. Stock is at 17% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels to watch: Support at $0.54, $0.52, $0.51 | Resistance at $0.62, $0.5, $0.48</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $0.57, stop loss at $0.51 (-10%), target $0.85 (+50%). Daily range today was $0.56–$0.59.</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 8/100 (base 100) — Vol Spike: 0/25 | Vol/Float: 0/15 | Vol Trend: 0/20 | Low Float: 0/15 | Range Pos: 5/5 | Small Cap: 3/5 | Typical Price: 0/10 | Momentum: 0/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('GFAI', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('GFAI', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-GFAI"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#11</div>
+                <div class="card-ticker">
+                    <strong>FCEL</strong>
+                    <span class="card-name">FuelCell Energy, Inc.</span>
+                </div>
+                <div class="card-price">$7.04</div>
+                <div class="card-score score-low">3</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.6x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$372.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$47.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">1.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">914K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">1.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">41%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$3.58 — $11.99</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">6.5%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$7.15 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$8.07</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$8.02</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">1</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$6.34</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$10.56</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $7.14, $6.88, $7.26<br/>Resistance: $7.64, $8.54, $8.66</p></div>
+
+                <div class="insider-badge">No Form 4 filings in last 30 days</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 914K today vs. 1.6M average (0.6x). Not a major spike yet, but passed other filters.</p><p>Market cap is $372.7M — on the larger end of the target range.</p><p>Price is $7.04, trading below the 10-day MA ($8.07) and below the 50-day MA ($8.02).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($7.15). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $3.58 — $11.99. Stock is at 41% of its range. Mid-range.</p><p>Key levels to watch: Support at $7.14, $6.88, $7.26 | Resistance at $7.64, $8.54, $8.66</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $7.04, stop loss at $6.34 (-10%), target $10.56 (+50%). Daily range today was $7.03–$7.37.</p><p>SEC filing history: 1 offering(s) in last 12 months.</p><p><strong>INSIDER ACTIVITY:</strong> No Form 4 filings in last 30 days</p><p><strong>SCORE:</strong> 3/100 (base 100) — Vol Spike: 0/25 | Vol/Float: 0/15 | Vol Trend: 0/20 | Low Float: 0/15 | Range Pos: 3/5 | Small Cap: 0/5 | Typical Price: 0/10 | Momentum: 0/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('FCEL', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('FCEL', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-FCEL"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#12</div>
+                <div class="card-ticker">
+                    <strong>BKKT</strong>
+                    <span class="card-name">Bakkt, Inc.</span>
+                </div>
+                <div class="card-price">$9.3</div>
+                <div class="card-score score-low">0</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">0.3x vol</span>
+                </div>
+                <div class="card-flags"><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-10 11:15 AM | Source: yfinance | Delayed ~15-20 min
+                </div>
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$284.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$22.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">2.4%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">548K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">1.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol Trend</div>
+                        <div class="metric-value">0d up</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Range Position</div>
+                        <div class="metric-value">6%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$6.81 — $49.79</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Short Interest</div>
+                        <div class="metric-value">27.8%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Typical Price</div>
+                        <div class="metric-value negative">$9.37 (BELOW)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">10-day MA</div>
+                        <div class="metric-value">$9.84</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">50-day MA</div>
+                        <div class="metric-value">$12.7</div>
+                    </div>
+                    <div class="metric"><div class="metric-label">Offerings (12m)</div><div class="metric-value">3</div></div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$8.37</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target (1:5 R/R)</div>
+                        <div class="metric-value positive">$13.95</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $9.05, $9.77, $9.8<br/>Resistance: $10.81, $11.02, $11.25</p></div>
+
+                <div class="insider-badge">1 Form 4 filing(s) in last 30 days | SELLING: 1 transaction(s), 785 shares disposed | NET: Insider selling | Insiders: D&#x27;Annunzio Marc</div>
+
+                
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is 548K today vs. 1.7M average (0.3x). Not a major spike yet, but passed other filters.</p><p>Volume represents 2.4% of total float — reasonable activity for a micro-cap.</p><p>Market cap is $284.2M — on the larger end of the target range.</p><p>Price is $9.3, trading below the 10-day MA ($9.84) and below the 50-day MA ($12.7).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($9.37). This suggests institutional selling pressure. If considering entry, wait for price to reclaim Typical Price.</p><p>52-week range: $6.81 — $49.79. Stock is at 6% of its range. Near the bottom — potential deep value with room to run.</p><p>Short interest is 27.8% — elevated. High short interest can create squeeze dynamics if positive news drops.</p><p>Key levels to watch: Support at $9.05, $9.77, $9.8 | Resistance at $10.81, $11.02, $11.25</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry at $9.3, stop loss at $8.37 (-10%), target $13.95 (+50%). Daily range today was $9.15–$9.67.</p><p>SEC filing history: 3 offering(s) in last 12 months. (Score penalty: -10 pts)</p><p><strong>INSIDER ACTIVITY:</strong> 1 Form 4 filing(s) in last 30 days | SELLING: 1 transaction(s), 785 shares disposed | NET: Insider selling | Insiders: D&#x27;Annunzio Marc</p><p>Net insider selling detected — caution.</p><p><strong>SCORE:</strong> 0/100 (base 100 — Offering penalty: -10) — Vol Spike: 0/25 | Vol/Float: 5/15 | Vol Trend: 0/20 | Low Float: 0/15 | Range Pos: 5/5 | Small Cap: 0/5 | Typical Price: 0/10 | Momentum: 0/5</p>
+                </div>
+
+                <div class="feedback-section">
+                    <h4>Amir's Review</h4>
+                    <div class="feedback-buttons">
+                        <button class="btn-yes" onclick="markPick('BKKT', 'yes', this)">Would Trade</button>
+                        <button class="btn-no" onclick="markPick('BKKT', 'no', this)">Would Skip</button>
+                    </div>
+                    <textarea class="feedback-notes" placeholder="Why? (e.g., 'no catalyst', 'float too high', 'like the setup')..."
+                              id="notes-BKKT"></textarea>
+                </div>
+            </div>
+        </div>
+        
+
+    <div class="export-bar">
+        <button class="btn-export" onclick="saveFeedbackHTML()">Save My Feedback</button>
+        <div class="save-status" id="save-status"></div>
+    </div>
+
+    <div class="footer">Generated by Amir Screener V2 Enhanced — Not financial advice. Risk/reward targets are estimates based on 1:5 R/R ratio.</div>
+
+    <script>
+        // Expand first card by default
+        document.querySelector('.card')?.classList.add('expanded');
+
+        const feedback = {};
+
+        function markPick(ticker, decision, btn) {
+            feedback[ticker] = feedback[ticker] || {};
+            feedback[ticker].decision = decision;
+            // Toggle active state
+            const buttons = btn.parentElement.querySelectorAll('button');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            // Store in data attribute for persistence
+            btn.closest('.card').setAttribute('data-decision', decision);
+        }
+
+        // Auto-save notes on blur
+        document.querySelectorAll('.feedback-notes').forEach(textarea => {
+            textarea.addEventListener('blur', function() {
+                const ticker = this.id.replace('notes-', '');
+                feedback[ticker] = feedback[ticker] || {};
+                feedback[ticker].notes = this.value;
+            });
+        });
+
+        function saveFeedbackHTML() {
+            // Collect all feedback into the DOM before saving
+            document.querySelectorAll('.feedback-notes').forEach(textarea => {
+                const ticker = textarea.id.replace('notes-', '');
+                if (textarea.value) {
+                    feedback[ticker] = feedback[ticker] || {};
+                    feedback[ticker].notes = textarea.value;
+                }
+            });
+
+            // Embed feedback as a JSON block in the HTML itself
+            let feedbackEl = document.getElementById('embedded-feedback');
+            if (!feedbackEl) {
+                feedbackEl = document.createElement('script');
+                feedbackEl.id = 'embedded-feedback';
+                feedbackEl.type = 'application/json';
+                document.body.appendChild(feedbackEl);
+            }
+            feedbackEl.textContent = JSON.stringify({
+                reviewed_at: new Date().toISOString(),
+                reviewer: "Amir",
+                feedback: feedback
+            }, null, 2);
+
+            // Mark buttons as active in the HTML so state persists
+            document.querySelectorAll('.card').forEach(card => {
+                const decision = card.getAttribute('data-decision');
+                if (decision) {
+                    card.querySelectorAll('.feedback-buttons button').forEach(b => {
+                        b.classList.remove('active');
+                        if ((decision === 'yes' && b.classList.contains('btn-yes')) ||
+                            (decision === 'no' && b.classList.contains('btn-no'))) {
+                            b.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            // Save the entire page as a new HTML file
+            const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'watchlist_v2_reviewed_' + new Date().toISOString().slice(0, 10) + '.html';
+            a.click();
+            URL.revokeObjectURL(url);
+
+            document.getElementById('save-status').textContent = 'Saved! Send this file back to Matthew.';
+            document.getElementById('save-status').style.color = '#00d4aa';
+        }
+
+        // On load: restore feedback from embedded JSON if present
+        (function() {
+            const el = document.getElementById('embedded-feedback');
+            if (el && el.textContent.trim()) {
+                try {
+                    const data = JSON.parse(el.textContent);
+                    Object.assign(feedback, data.feedback || {});
+                    // Restore button states and notes
+                    for (const [ticker, fb] of Object.entries(feedback)) {
+                        if (fb.decision) {
+                            const card = document.querySelector(`#notes-${ticker}`)?.closest('.card');
+                            if (card) {
+                                card.setAttribute('data-decision', fb.decision);
+                                card.querySelectorAll('.feedback-buttons button').forEach(b => {
+                                    if ((fb.decision === 'yes' && b.classList.contains('btn-yes')) ||
+                                        (fb.decision === 'no' && b.classList.contains('btn-no'))) {
+                                        b.classList.add('active');
+                                    }
+                                });
+                            }
+                        }
+                        if (fb.notes) {
+                            const textarea = document.getElementById(`notes-${ticker}`);
+                            if (textarea) textarea.value = fb.notes;
+                        }
+                    }
+                } catch(e) {}
+            }
+        })();
+    </script>
+</body>
+</html>
