@@ -88,9 +88,9 @@
 </head>
 <body>
     <h1>Amir's Watchlist V2</h1>
-    <div class="subtitle">March 12, 2026 at 07:19 AM -- Click any stock to expand</div>
+    <div class="subtitle">March 12, 2026 at 07:57 AM -- Click any stock to expand</div>
     <div style="color:#636e72;font-size:11px;margin-bottom:12px;padding:6px 12px;background:#111827;border-radius:6px;border:1px solid #1a2332;">
-        Data source: Yahoo Finance (delayed ~15-20 min) | Report generated: 2026-03-12 07:19:49 AM | Not real-time
+        Data source: Yahoo Finance (delayed ~15-20 min) | Report generated: 2026-03-12 07:57:28 AM | Not real-time
     </div>
 
     <div class="tab-container">
@@ -102,10 +102,10 @@
         <div id="watchlist" class="tab-content active">
             
             <div class="summary-bar">
-                <div class="summary-stat"><div class="label">Candidates</div><div class="value">3</div></div>
-                <div class="summary-stat"><div class="label">Avg Score</div><div class="value">11</div></div>
-                <div class="summary-stat"><div class="label">Vol Spikes (3x+)</div><div class="value">0</div></div>
-                <div class="summary-stat"><div class="label">Avg Divergence</div><div class="value">0.0</div></div>
+                <div class="summary-stat"><div class="label">Candidates</div><div class="value">20</div></div>
+                <div class="summary-stat"><div class="label">Avg Score</div><div class="value">64</div></div>
+                <div class="summary-stat"><div class="label">Vol Spikes (3x+)</div><div class="value">20</div></div>
+                <div class="summary-stat"><div class="label">Avg Divergence</div><div class="value">12.8</div></div>
             </div>
 
             <div class="scoring-grid">
@@ -140,10 +140,10 @@
             </div>
 
             <div class="filter-bar">
-                <button class="filter-btn active" onclick="filterCards('all', this)">All (3)</button>
-                <button class="filter-btn" onclick="filterCards('EARLY', this)" style="border-left:3px solid #00d4aa;">EARLY (3)</button>
-                <button class="filter-btn" onclick="filterCards('MID', this)" style="border-left:3px solid #ffd700;">MID (0)</button>
-                <button class="filter-btn" onclick="filterCards('EXTENDED', this)" style="border-left:3px solid #ff6b6b;">EXTENDED (0)</button>
+                <button class="filter-btn active" onclick="filterCards('all', this)">All (20)</button>
+                <button class="filter-btn" onclick="filterCards('EARLY', this)" style="border-left:3px solid #00d4aa;">EARLY (14)</button>
+                <button class="filter-btn" onclick="filterCards('MID', this)" style="border-left:3px solid #ffd700;">MID (4)</button>
+                <button class="filter-btn" onclick="filterCards('EXTENDED', this)" style="border-left:3px solid #ff6b6b;">EXTENDED (2)</button>
             </div>
 
             
@@ -151,51 +151,507 @@
             <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
                 <div class="card-rank">#1</div>
                 <div class="card-ticker">
-                    <strong>LGVN</strong>
-                    <span class="card-name">Longeveron Inc.</span>
+                    <strong>ROMA</strong>
+                    <span class="card-name">Roma Green Finance Limited</span>
                 </div>
                 <div style="display:flex;gap:8px;align-items:center;">
                     <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
-                    <span style="display:inline-block;color:#ff6b6b;font-size:13px;font-weight:bold;">▼ Fading</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
                 </div>
-                <div class="card-price">$0.83</div>
-                <div class="card-score score-low">16.0</div>
+                <div class="card-price">$4.9</div>
+                <div class="card-score score-high">89.4</div>
                 <div class="card-vol">
-                    <span class="vol-ratio-badge">0.1x vol</span>
+                    <span class="vol-ratio-badge">25.5x vol</span>
                 </div>
-                <div style="font-size:12px;color:#636e72;min-width:60px;">+1.6%</div>
-                <div class="card-flags"></div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+1.5%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (25.530535704690774x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
                 <div class="card-expand">&#9660;</div>
             </div>
             <div class="card-body">
                 <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
-                    Data as of: 2026-03-12 07:19 AM | Source: yfinance | Delayed ~15-20 min
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
                 </div>
 
                 <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
-                <div style="flex-grow:0; background:#00d4aa; border-radius:3px;" title="Volume: 0.0/40 pts"></div>
-                <div style="flex-grow:0; background:#ff9f43; border-radius:3px;" title="Acceleration: 0/15 pts"></div>
-                <div style="flex-grow:0; background:#ffd700; border-radius:3px;" title="Divergence: 0.0/20 pts"></div>
-                <div style="flex-grow:66; background:#ff6b6b; border-radius:3px;" title="Momentum: 10/15 pts"></div>
+                <div style="flex-grow:86; background:#00d4aa; border-radius:3px;" title="Volume: 34.4/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:100; background:#ff6b6b; border-radius:3px;" title="Momentum: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:0; background:#9b59b6; border-radius:3px;" title="Float: 0/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">34.4</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 5 days</div>
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$291.9M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$40.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">11.8%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">4.8M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">186K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.67 — $8.88</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$4.9</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$4.41</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$7.35</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.18, $2.03, $1.83<br/>Resistance: $4.71, $3.27, $2.68</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> ROMA traded 4.8M shares today — that&#x27;s 25.5x the 10-day average of 186K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 11.8% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Market cap is $291.9M — larger end of target range.</p><p>Price is $4.9, trading above the 10-day MA ($3.07) and above the 50-day MA ($2.37).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($5.69). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $0.67 — $8.88. Stock is at 52% of its range. Mid-range.</p><p>Key levels: Support at $2.18, $2.03, $1.83 | Resistance at $4.71, $3.27, $2.68</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $4.9, stop $4.41 (-10%), target $7.35 (+50%). Daily range: $3.6–$8.57.</p><p>SCORE: 89.4/100 [INTRADAY] — Volume: 34.4/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 15/15 | Stage: 5/5 | Float: 0/5</p><p>Multi-day buildup: 5 consecutive elevated volume days</p><p>Price-volume divergence: volume spiking but price only 1.5% — quiet accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#2</div>
+                <div class="card-ticker">
+                    <strong>AEMD</strong>
+                    <span class="card-name">Aethlon Medical, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$1.7</div>
+                <div class="card-score score-high">79.7</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">45.7x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+3.0%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (45.663758389261744x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:52 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:96; background:#00d4aa; border-radius:3px;" title="Volume: 38.7/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:80; background:#ffd700; border-radius:3px;" title="Divergence: 16.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:100; background:#9b59b6; border-radius:3px;" title="Float: 5/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">38.7</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">16.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$2.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$1.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">66.7%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">816K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">18K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.36 — $35.2</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$1.7</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.53</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$2.55</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.86, $1.92, $2.08<br/>Resistance: $2.1, $2.19, $2.32</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> AEMD traded 816K shares today — that&#x27;s 45.7x the 10-day average of 18K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 66.7% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Very low float: only $1.2M shares. Even moderate buying pressure can cause outsized moves.</p><p>Micro-cap at $2.2M. High risk, high reward potential.</p><p>Price is $1.7, trading below the 10-day MA ($1.77) and below the 50-day MA ($2.31).</p><p>Trading ABOVE Typical Price ($1.67) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $1.36 — $35.2. Stock is at 1% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $1.86, $1.92, $2.08 | Resistance at $2.1, $2.19, $2.32</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $1.7, stop $1.53 (-10%), target $2.55 (+50%). Daily range: $1.36–$1.94.</p><p>SCORE: 79.7/100 [INTRADAY] — Volume: 38.7/40 | Acceleration: 15/15 | Divergence: 16.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 5/5</p><p>Price-volume divergence: volume spiking but price only 3.0% — quiet accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="MID">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#3</div>
+                <div class="card-ticker">
+                    <strong>POLA</strong>
+                    <span class="card-name">Polar Power, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#ffd700;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">MID</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$2.28</div>
+                <div class="card-score score-high">79.2</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">69.4x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+17.5%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (69.40418231602413x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:98; background:#00d4aa; border-radius:3px;" title="Volume: 39.2/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:20; background:#ffd700; border-radius:3px;" title="Divergence: 4.0/20 pts"></div>
+                <div style="flex-grow:86; background:#ff6b6b; border-radius:3px;" title="Momentum: 13/15 pts"></div>
+                <div style="flex-grow:60; background:#a29bfe; border-radius:3px;" title="Stage: 3/5 pts"></div>
+                <div style="flex-grow:100; background:#9b59b6; border-radius:3px;" title="Float: 5/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">39.2</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">4.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">13</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 4 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$6.1M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$1.8M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">1549.4%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">28.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">413K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.31 — $5.75</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$2.28</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.05</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$3.42</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.71, $1.67, $1.56<br/>Resistance: $2.28, $2.0, $1.9</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> POLA traded 28.6M shares today — that&#x27;s 69.4x the 10-day average of 413K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 1549.4% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Very low float: only $1.8M shares. Even moderate buying pressure can cause outsized moves.</p><p>Small cap at $6.1M. Catalysts can move the needle.</p><p>Price is $2.28, trading above the 10-day MA ($1.62) and above the 50-day MA ($1.65).</p><p>Trading ABOVE Typical Price ($2.27) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $1.31 — $5.75. Stock is at 22% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $1.71, $1.67, $1.56 | Resistance at $2.28, $2.0, $1.9</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $2.28, stop $2.05 (-10%), target $3.42 (+50%). Daily range: $2.13–$2.39.</p><p>SCORE: 79.2/100 [INTRADAY] — Volume: 39.2/40 | Acceleration: 15/15 | Divergence: 4.0/20 | Momentum: 13/15 | Stage: 3/5 | Float: 5/5</p><p>Multi-day buildup: 4 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#4</div>
+                <div class="card-ticker">
+                    <strong>AEAQ</strong>
+                    <span class="card-name">Activate Energy Acquisition Cor</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
+                </div>
+                <div class="card-price">$9.89</div>
+                <div class="card-score score-high">79.2</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">93.3x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+0.0%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (93.33333333333333x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 06:51 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:98; background:#00d4aa; border-radius:3px;" title="Volume: 39.2/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:0; background:#9b59b6; border-radius:3px;" title="Float: 0/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">39.2</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$309.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$23.6M (est)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">1.5%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">350K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">4K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$9.78 — $10.03</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$9.89</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$8.9</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$14.84</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $9.78<br/>Resistance: $9.93, $9.94</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> AEAQ traded 350K shares today — that&#x27;s 93.3x the 10-day average of 4K. This extreme spike in a low-float name often means someone knows something.</p><p>Market cap is $309.7M — larger end of target range.</p><p>Price is $9.89, trading below the 10-day MA ($9.9).</p><p>Trading ABOVE Typical Price ($9.89) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $9.78 — $10.03. Stock is at 44% of its range. Mid-range.</p><p>Key levels: Support at $9.78 | Resistance at $9.93, $9.94</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $9.89, stop $8.9 (-10%), target $14.84 (+50%). Daily range: $9.89–$9.89.</p><p>SCORE: 79.2/100 [INTRADAY] — Volume: 39.2/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 0/5</p><p>Price-volume divergence: volume spiking but price only 0.0% — quiet accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#5</div>
+                <div class="card-ticker">
+                    <strong>CLPS</strong>
+                    <span class="card-name">CLPS Incorporation</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$1.0</div>
+                <div class="card-score score-high">75.5</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">11.5x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">-2.4%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (11.464432432432432x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:24 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:66; background:#00d4aa; border-radius:3px;" title="Volume: 26.5/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:53; background:#ff6b6b; border-radius:3px;" title="Momentum: 8/15 pts"></div>
                 <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
                 <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
             </div>
 
                 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">26.5</div>
                     <div style="color:#636e72;font-size:10px;">Vol / 40</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
                     <div style="color:#636e72;font-size:10px;">Accel / 15</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
                     <div style="color:#636e72;font-size:10px;">Div / 20</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">10</div>
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">8</div>
                     <div style="color:#636e72;font-size:10px;">Mom / 15</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
@@ -209,87 +665,201 @@
             </div>
 
                 
-                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 3 days</div>
-                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 2 days</div>
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
                 
 
                 <div class="card-metrics">
                     <div class="metric">
                         <div class="metric-label">Market Cap</div>
-                        <div class="metric-value">$17.6M</div>
+                        <div class="metric-value">$29.7M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Float</div>
-                        <div class="metric-value">$17.2M</div>
+                        <div class="metric-value">$13.3M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Vol % Float</div>
-                        <div class="metric-value">13.6%</div>
+                        <div class="metric-value">0.8%</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Volume Today</div>
-                        <div class="metric-value">2.4M</div>
+                        <div class="metric-value">106K</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Avg Volume (10d)</div>
-                        <div class="metric-value">26.0M</div>
+                        <div class="metric-value">9K</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">52w Range</div>
-                        <div class="metric-value">$0.47 — $1.92</div>
+                        <div class="metric-value">$0.8 — $1.88</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Entry</div>
-                        <div class="metric-value">$0.83</div>
+                        <div class="metric-value">$1.0</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Stop Loss</div>
-                        <div class="metric-value negative">$0.74</div>
+                        <div class="metric-value negative">$0.9</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Target</div>
-                        <div class="metric-value positive">$1.24</div>
+                        <div class="metric-value positive">$1.5</div>
                     </div>
                 </div>
 
-                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $0.53, $0.52, $0.5<br/>Resistance: $0.7, $0.65, $0.63</p></div>
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $0.84, $0.8<br/>Resistance: $1.02, $1.1, $1.14</p></div>
 
                 <div class="reasoning-section">
                     <h4>Analysis & Reasoning</h4>
-                    <p>Volume is 2.4M today vs. 26.0M average (0.1x). Not a major spike yet, but passed other filters.</p><p>Volume represents 13.6% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Small cap at $17.6M. Catalysts can move the needle.</p><p>Price is $0.83, trading above the 10-day MA ($0.62) and above the 50-day MA ($0.57).</p><p>Trading ABOVE Typical Price ($0.8) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $0.47 — $1.92. Stock is at 24% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $0.53, $0.52, $0.5 | Resistance at $0.7, $0.65, $0.63</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $0.83, stop $0.74 (-10%), target $1.24 (+50%). Daily range: $0.71–$0.86.</p><p>SCORE: 16.0/100 [INTRADAY] — Volume: 0.0/40 | Acceleration: 0/15 | Divergence: 0.0/20 | Momentum: 10/15 | Stage: 5/5 | Float: 1/5</p><p>Multi-day buildup: 3 consecutive elevated volume days</p>
+                    <p><strong>VOLUME ALERT:</strong> CLPS traded 106K shares today — that&#x27;s 11.5x the 10-day average of 9K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Float is $13.3M — manageable, but heavier than ideal 3-10M range. Will need stronger catalysts for multi-bagger runs.</p><p>Market cap is $29.7M — larger end of target range.</p><p>Price is $1.0, trading below the 10-day MA ($1.04) and below the 50-day MA ($1.03).</p><p>Trading ABOVE Typical Price ($0.98) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $0.8 — $1.88. Stock is at 19% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $0.84, $0.8 | Resistance at $1.02, $1.1, $1.14</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $1.0, stop $0.9 (-10%), target $1.5 (+50%). Daily range: $0.9–$1.03.</p><p>SCORE: 75.5/100 [INTRADAY] — Volume: 26.5/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 8/15 | Stage: 5/5 | Float: 1/5</p><p>Multi-day buildup: 2 consecutive elevated volume days</p><p>Price-volume divergence: volume spiking while price DOWN — possible accumulation</p>
                 </div>
             </div>
         </div>
         
         <div class="card" data-stage="EARLY">
             <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
-                <div class="card-rank">#2</div>
+                <div class="card-rank">#6</div>
                 <div class="card-ticker">
-                    <strong>EDSA</strong>
-                    <span class="card-name">Edesa Biotech, Inc.</span>
+                    <strong>CEPV</strong>
+                    <span class="card-name">Cantor Equity Partners V, Inc.</span>
                 </div>
                 <div style="display:flex;gap:8px;align-items:center;">
                     <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
-                    <span style="display:inline-block;color:#ff6b6b;font-size:13px;font-weight:bold;">▼ Fading</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
                 </div>
-                <div class="card-price">$6.22</div>
-                <div class="card-score score-low">10.0</div>
+                <div class="card-price">$10.1</div>
+                <div class="card-score score-high">74.4</div>
                 <div class="card-vol">
-                    <span class="vol-ratio-badge">0.0x vol</span>
+                    <span class="vol-ratio-badge">11.4x vol</span>
                 </div>
-                <div style="font-size:12px;color:#636e72;min-width:60px;">-6.1%</div>
-                <div class="card-flags"><span class="flag">BELOW Typical Price — caution</span></div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">-0.1%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (11.358516129032258x avg)</span><span class="flag">Vol increasing 4 days straight</span><span class="flag">BELOW Typical Price — caution</span></div>
                 <div class="card-expand">&#9660;</div>
             </div>
             <div class="card-body">
                 <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
-                    Data as of: 2026-03-12 07:19 AM | Source: yfinance | Delayed ~15-20 min
+                    Data as of: 2026-03-12 07:37 AM | Source: finviz+yfinance | Delayed ~15-20 min
                 </div>
 
                 <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
-                <div style="flex-grow:0; background:#00d4aa; border-radius:3px;" title="Volume: 0.0/40 pts"></div>
-                <div style="flex-grow:0; background:#ff9f43; border-radius:3px;" title="Acceleration: 0/15 pts"></div>
-                <div style="flex-grow:0; background:#ffd700; border-radius:3px;" title="Divergence: 0.0/20 pts"></div>
+                <div style="flex-grow:65; background:#00d4aa; border-radius:3px;" title="Volume: 26.4/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:53; background:#ff6b6b; border-radius:3px;" title="Momentum: 8/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:0; background:#9b59b6; border-radius:3px;" title="Float: 0/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">26.4</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">8</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 2 days</div>
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$321.1M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$25.0M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">1.4%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">352K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">31K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$10.1 — $10.36</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$10.1</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$9.09</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$15.15</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $10.1, $10.11, $10.13<br/>Resistance: $10.16, $10.18, $10.26</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> CEPV traded 352K shares today — that&#x27;s 11.4x the 10-day average of 31K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has been climbing for 4 consecutive days — building volume before news is the pattern to watch.</p><p>Market cap is $321.1M — larger end of target range.</p><p>Price is $10.1, trading below the 10-day MA ($10.13) and below the 50-day MA ($10.19).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($10.11). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $10.1 — $10.36. Stock is at 0% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $10.1, $10.11, $10.13 | Resistance at $10.16, $10.18, $10.26</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $10.1, stop $9.09 (-10%), target $15.15 (+50%). Daily range: $10.1–$10.14.</p><p>SCORE: 74.4/100 [INTRADAY] — Volume: 26.4/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 8/15 | Stage: 5/5 | Float: 0/5</p><p>Multi-day buildup: 2 consecutive elevated volume days</p><p>Price-volume divergence: volume spiking while price DOWN — possible accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#7</div>
+                <div class="card-ticker">
+                    <strong>SPRC</strong>
+                    <span class="card-name">SciSparc Ltd.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
+                </div>
+                <div class="card-price">$4.2</div>
+                <div class="card-score score-mid">69.6</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">22.3x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+9.1%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (22.32252655316596x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:54 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:81; background:#00d4aa; border-radius:3px;" title="Volume: 32.6/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:60; background:#ffd700; border-radius:3px;" title="Divergence: 12.0/20 pts"></div>
                 <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
                 <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
                 <div style="flex-grow:100; background:#9b59b6; border-radius:3px;" title="Float: 5/5 pts"></div>
@@ -297,15 +867,15 @@
 
                 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">32.6</div>
                     <div style="color:#636e72;font-size:10px;">Vol / 40</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
                     <div style="color:#636e72;font-size:10px;">Accel / 15</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">12.0</div>
                     <div style="color:#636e72;font-size:10px;">Div / 20</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
@@ -330,80 +900,536 @@
                 <div class="card-metrics">
                     <div class="metric">
                         <div class="metric-label">Market Cap</div>
-                        <div class="metric-value">$51.9M</div>
+                        <div class="metric-value">$2.4M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Float</div>
-                        <div class="metric-value">$4.2M</div>
+                        <div class="metric-value">49K</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Vol % Float</div>
-                        <div class="metric-value">6.4%</div>
+                        <div class="metric-value">6284.4%</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Volume Today</div>
-                        <div class="metric-value">271K</div>
+                        <div class="metric-value">3.1M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Avg Volume (10d)</div>
-                        <div class="metric-value">13.5M</div>
+                        <div class="metric-value">138K</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">52w Range</div>
-                        <div class="metric-value">$0.72 — $8.74</div>
+                        <div class="metric-value">$3.6 — $94.5</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Entry</div>
-                        <div class="metric-value">$6.22</div>
+                        <div class="metric-value">$4.2</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Stop Loss</div>
-                        <div class="metric-value negative">$5.59</div>
+                        <div class="metric-value negative">$3.78</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Target</div>
-                        <div class="metric-value positive">$9.32</div>
+                        <div class="metric-value positive">$6.3</div>
                     </div>
                 </div>
 
-                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $3.55, $0.94, $0.72<br/>Resistance: $8.74, $1.78, $1.61</p></div>
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $4.16, $4.39, $4.52<br/>Resistance: $5.49, $5.91, $6.16</p></div>
 
                 <div class="reasoning-section">
                     <h4>Analysis & Reasoning</h4>
-                    <p>Volume is 271K today vs. 13.5M average (0.0x). Not a major spike yet, but passed other filters.</p><p>Volume represents 6.4% of total float — notable concentration. If sustained or grows, look for acceleration.</p><p>Very low float: only $4.2M shares. Even moderate buying pressure can cause outsized moves.</p><p>Market cap is $51.9M — larger end of target range.</p><p>Price is $6.22, trading above the 10-day MA ($5.01) and above the 50-day MA ($2.03).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($6.32). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $0.72 — $8.74. Stock is at 69% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Short interest is 19.2% (0.1 days to cover) — notable.</p><p>Key levels: Support at $3.55, $0.94, $0.72 | Resistance at $8.74, $1.78, $1.61</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $6.22, stop $5.59 (-10%), target $9.32 (+50%). Daily range: $6.06–$6.68.</p><p>SCORE: 10.0/100 [INTRADAY] — Volume: 0.0/40 | Acceleration: 0/15 | Divergence: 0.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 5/5</p>
+                    <p><strong>VOLUME ALERT:</strong> SPRC traded 3.1M shares today — that&#x27;s 22.3x the 10-day average of 138K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume represents 6284.4% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Very low float: only 49K shares. Even moderate buying pressure can cause outsized moves.</p><p>Micro-cap at $2.4M. High risk, high reward potential.</p><p>Price is $4.2, trading below the 10-day MA ($4.78) and below the 50-day MA ($7.58).</p><p>Trading ABOVE Typical Price ($4.11) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $3.6 — $94.5. Stock is at 1% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $4.16, $4.39, $4.52 | Resistance at $5.49, $5.91, $6.16</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $4.2, stop $3.78 (-10%), target $6.3 (+50%). Daily range: $3.8–$4.34.</p><p>SCORE: 69.6/100 [INTRADAY] — Volume: 32.6/40 | Acceleration: 15/15 | Divergence: 12.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 5/5</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="MID">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#8</div>
+                <div class="card-ticker">
+                    <strong>LCUT</strong>
+                    <span class="card-name">Lifetime Brands, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#ffd700;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">MID</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$3.41</div>
+                <div class="card-score score-mid">66.2</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">269.6x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+12.9%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (269.60597915523863x avg)</span><span class="flag">Vol increasing 3 days straight</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:98; background:#00d4aa; border-radius:3px;" title="Volume: 39.2/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:40; background:#ffd700; border-radius:3px;" title="Divergence: 8.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:60; background:#a29bfe; border-radius:3px;" title="Stage: 3/5 pts"></div>
+                <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">39.2</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">8.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">1</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$77.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$11.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">43.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">4.9M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">18K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$2.89 — $5.78</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$3.41</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$3.07</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$5.12</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $3.22, $3.2, $3.64<br/>Resistance: $3.49, $3.54, $3.28</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> LCUT traded 4.9M shares today — that&#x27;s 269.6x the 10-day average of 18K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has been climbing for 3 consecutive days — building volume before news is the pattern to watch.</p><p>Volume represents 43.9% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Float is $11.2M — manageable, but heavier than ideal 3-10M range. Will need stronger catalysts for multi-bagger runs.</p><p>Market cap is $77.3M — larger end of target range.</p><p>Price is $3.41, trading above the 10-day MA ($3.18) and below the 50-day MA ($3.52).</p><p>Trading ABOVE Typical Price ($3.32) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $2.89 — $5.78. Stock is at 18% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $3.22, $3.2, $3.64 | Resistance at $3.49, $3.54, $3.28</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $3.41, stop $3.07 (-10%), target $5.12 (+50%). Daily range: $3.1–$3.44.</p><p>SCORE: 66.2/100 [INTRADAY] — Volume: 39.2/40 | Acceleration: 15/15 | Divergence: 8.0/20 | Momentum: 0/15 | Stage: 3/5 | Float: 1/5</p>
                 </div>
             </div>
         </div>
         
         <div class="card" data-stage="EARLY">
             <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
-                <div class="card-rank">#3</div>
+                <div class="card-rank">#9</div>
                 <div class="card-ticker">
-                    <strong>ANTX</strong>
-                    <span class="card-name">AN2 Therapeutics, Inc.</span>
+                    <strong>SLRX</strong>
+                    <span class="card-name">Salarius Pharmaceuticals, Inc.</span>
                 </div>
                 <div style="display:flex;gap:8px;align-items:center;">
                     <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
-                    <span style="display:inline-block;color:#ff6b6b;font-size:13px;font-weight:bold;">▼ Fading</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
                 </div>
-                <div class="card-price">$5.1</div>
-                <div class="card-score score-low">6.0</div>
+                <div class="card-price">$7.86</div>
+                <div class="card-score score-mid">66.1</div>
                 <div class="card-vol">
-                    <span class="vol-ratio-badge">0.0x vol</span>
+                    <span class="vol-ratio-badge">19.8x vol</span>
                 </div>
-                <div style="font-size:12px;color:#636e72;min-width:60px;">+0.2%</div>
-                <div class="card-flags"></div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">-5.1%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (19.80085475158782x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
                 <div class="card-expand">&#9660;</div>
             </div>
             <div class="card-body">
                 <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
-                    Data as of: 2026-03-12 07:19 AM | Source: yfinance | Delayed ~15-20 min
+                    Data as of: 2026-03-11 12:00 AM | Source: yfinance | Delayed ~15-20 min
                 </div>
 
                 <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
-                <div style="flex-grow:0; background:#00d4aa; border-radius:3px;" title="Volume: 0.0/40 pts"></div>
-                <div style="flex-grow:0; background:#ff9f43; border-radius:3px;" title="Acceleration: 0/15 pts"></div>
+                <div style="flex-grow:77; background:#00d4aa; border-radius:3px;" title="Volume: 31.1/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:60; background:#ffd700; border-radius:3px;" title="Divergence: 12.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:60; background:#9b59b6; border-radius:3px;" title="Float: 3/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">31.1</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">12.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$4.9M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$5.8M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">4.6%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">267K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">13K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.51 — $44.1</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$7.86</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$7.07</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$11.79</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $7.98, $7.68, $8.16<br/>Resistance: $8.12, $8.81, $9.84</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> SLRX traded 267K shares today — that&#x27;s 19.8x the 10-day average of 13K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume represents 4.6% of total float — reasonable activity.</p><p>Low float at $5.8M shares — sweet spot for big moves without needing massive institutional volume.</p><p>Micro-cap at $4.9M. High risk, high reward potential.</p><p>Price is $7.86, trading below the 10-day MA ($7.94) and below the 50-day MA ($8.9).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($7.95). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $0.51 — $44.1. Stock is at 17% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $7.98, $7.68, $8.16 | Resistance at $8.12, $8.81, $9.84</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $7.86, stop $7.07 (-10%), target $11.79 (+50%). Daily range: $7.58–$8.42.</p><p>SCORE: 66.1/100 [INTRADAY] — Volume: 31.1/40 | Acceleration: 15/15 | Divergence: 12.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 3/5</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#10</div>
+                <div class="card-ticker">
+                    <strong>LANV</strong>
+                    <span class="card-name">Lanvin Group Holdings Limited</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$1.92</div>
+                <div class="card-score score-mid">62.3</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">5.4x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+1.0%</div>
+                <div class="card-flags"><span class="flag">Volume spike (5.420775301764159x avg)</span><span class="flag">Vol increasing 4 days straight</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:46 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:25; background:#00d4aa; border-radius:3px;" title="Volume: 10.3/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:80; background:#ff6b6b; border-radius:3px;" title="Momentum: 12/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:0; background:#9b59b6; border-radius:3px;" title="Float: 0/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">10.3</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">12</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 3 days</div>
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$268.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$26.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">0.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">234K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">43K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.03 — $2.69</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$1.92</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.73</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$2.88</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.66, $1.58, $1.47<br/>Resistance: $1.95, $1.86, $1.84</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 234K shares today vs. 43K average (5.4x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume has been climbing for 4 consecutive days — building volume before news is the pattern to watch.</p><p>Market cap is $268.4M — larger end of target range.</p><p>Price is $1.92, trading above the 10-day MA ($1.71) and above the 50-day MA ($1.67).</p><p>Trading ABOVE Typical Price ($1.88) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $1.03 — $2.69. Stock is at 54% of its range. Mid-range.</p><p>Key levels: Support at $1.66, $1.58, $1.47 | Resistance at $1.95, $1.86, $1.84</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $1.92, stop $1.73 (-10%), target $2.88 (+50%). Daily range: $1.76–$1.95.</p><p>SCORE: 62.3/100 [INTRADAY] — Volume: 10.3/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 12/15 | Stage: 5/5 | Float: 0/5</p><p>Multi-day buildup: 3 consecutive elevated volume days</p><p>Price-volume divergence: volume spiking but price only 1.0% — quiet accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EXTENDED">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#11</div>
+                <div class="card-ticker">
+                    <strong>TLYS</strong>
+                    <span class="card-name">Tilly&#x27;s, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#ff6b6b;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EXTENDED</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$2.3</div>
+                <div class="card-score score-mid">60.1</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">25.0x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+41.3%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (25.00246005113455x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:85; background:#00d4aa; border-radius:3px;" title="Volume: 34.1/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
                 <div style="flex-grow:0; background:#ffd700; border-radius:3px;" title="Divergence: 0.0/20 pts"></div>
+                <div style="flex-grow:53; background:#ff6b6b; border-radius:3px;" title="Momentum: 8/15 pts"></div>
+                <div style="flex-grow:0; background:#a29bfe; border-radius:3px;" title="Stage: 0/5 pts"></div>
+                <div style="flex-grow:60; background:#9b59b6; border-radius:3px;" title="Float: 3/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">34.1</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">8</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 2 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$70.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$9.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">336.7%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">31.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">1.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.57 — $2.98</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$2.3</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.07</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$3.46</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.76, $1.74, $1.71<br/>Resistance: $2.11, $1.86, $1.75</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> TLYS traded 31.3M shares today — that&#x27;s 25.0x the 10-day average of 1.3M. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 336.7% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Low float at $9.3M shares — sweet spot for big moves without needing massive institutional volume.</p><p>Market cap is $70.2M — larger end of target range.</p><p>Price is $2.3, trading above the 10-day MA ($1.58) and above the 50-day MA ($1.58).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($2.43). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $0.57 — $2.98. Stock is at 72% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Key levels: Support at $1.76, $1.74, $1.71 | Resistance at $2.11, $1.86, $1.75</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $2.3, stop $2.07 (-10%), target $3.46 (+50%). Daily range: $2.25–$2.73.</p><p>SCORE: 60.1/100 [INTRADAY] — Volume: 34.1/40 | Acceleration: 15/15 | Divergence: 0.0/20 | Momentum: 8/15 | Stage: 0/5 | Float: 3/5</p><p>Multi-day buildup: 2 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#12</div>
+                <div class="card-ticker">
+                    <strong>GEG</strong>
+                    <span class="card-name">Great Elm Group, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$2.03</div>
+                <div class="card-score score-mid">59.6</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">7.9x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">-1.0%</div>
+                <div class="card-flags"><span class="flag">Volume spike (7.889678397036538x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:35 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:46; background:#00d4aa; border-radius:3px;" title="Volume: 18.6/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
                 <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
                 <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
                 <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
@@ -411,15 +1437,927 @@
 
                 <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">18.6</div>
                     <div style="color:#636e72;font-size:10px;">Vol / 40</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
-                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">1</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$66.5M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$11.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">4.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">469K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">59K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.76 — $3.51</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$2.03</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.83</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$3.04</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.99, $2.25, $2.37<br/>Resistance: $2.1, $2.15, $2.18</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 469K shares today vs. 59K average (7.9x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 4.2% of total float — reasonable activity.</p><p>Float is $11.2M — manageable, but heavier than ideal 3-10M range. Will need stronger catalysts for multi-bagger runs.</p><p>Market cap is $66.5M — larger end of target range.</p><p>Price is $2.03, trading below the 10-day MA ($2.05) and below the 50-day MA ($2.2).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($2.04). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $1.76 — $3.51. Stock is at 15% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $1.99, $2.25, $2.37 | Resistance at $2.1, $2.15, $2.18</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $2.03, stop $1.83 (-10%), target $3.04 (+50%). Daily range: $2.03–$2.05.</p><p>SCORE: 59.6/100 [INTRADAY] — Volume: 18.6/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 1/5</p><p>Price-volume divergence: volume spiking while price DOWN — possible accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="MID">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#13</div>
+                <div class="card-ticker">
+                    <strong>SAGT</strong>
+                    <span class="card-name">SAGTEC GLOBAL LIMITED</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#ffd700;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">MID</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$2.7</div>
+                <div class="card-score score-mid">57.8</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">12.1x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+23.8%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (12.136334727047878x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:67; background:#00d4aa; border-radius:3px;" title="Volume: 26.8/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:20; background:#ffd700; border-radius:3px;" title="Divergence: 4.0/20 pts"></div>
+                <div style="flex-grow:53; background:#ff6b6b; border-radius:3px;" title="Momentum: 8/15 pts"></div>
+                <div style="flex-grow:60; background:#a29bfe; border-radius:3px;" title="Stage: 3/5 pts"></div>
+                <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">26.8</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">4.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">8</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">1</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 2 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$34.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$12.8M (est)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">16.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">2.1M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">170K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.1 — $6.24</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$2.7</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.43</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$4.05</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.1, $1.97, $1.9<br/>Resistance: $2.5, $2.26, $2.13</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> SAGT traded 2.1M shares today — that&#x27;s 12.1x the 10-day average of 170K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 16.2% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Float is $12.8M (est) — manageable, but heavier than ideal 3-10M range. Will need stronger catalysts for multi-bagger runs.</p><p>Market cap is $34.4M — larger end of target range.</p><p>Price is $2.7, trading above the 10-day MA ($2.04) and above the 50-day MA ($1.93).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($2.77). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $1.1 — $6.24. Stock is at 31% of its range. Mid-range.</p><p>Key levels: Support at $2.1, $1.97, $1.9 | Resistance at $2.5, $2.26, $2.13</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $2.7, stop $2.43 (-10%), target $4.05 (+50%). Daily range: $2.3–$3.3.</p><p>SCORE: 57.8/100 [INTRADAY] — Volume: 26.8/40 | Acceleration: 15/15 | Divergence: 4.0/20 | Momentum: 8/15 | Stage: 3/5 | Float: 1/5</p><p>Multi-day buildup: 2 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#14</div>
+                <div class="card-ticker">
+                    <strong>WLIIU</strong>
+                    <span class="card-name">Willow Lane Acquisition Corp. I</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
+                </div>
+                <div class="card-price">$10.08</div>
+                <div class="card-score score-mid">57.6</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">7.3x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">-0.2%</div>
+                <div class="card-flags"><span class="flag">Volume spike (7.2829608938547485x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:35 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:41; background:#00d4aa; border-radius:3px;" title="Volume: 16.6/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">16.6</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">1</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">N/A</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$12.3M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">2.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">261K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">36K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$10.06 — $10.19</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$10.08</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$9.07</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$15.12</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $10.07<br/>Resistance: $10.14, $10.19</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 261K shares today vs. 36K average (7.3x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume represents 2.1% of total float — reasonable activity.</p><p>Float is $12.3M — manageable, but heavier than ideal 3-10M range. Will need stronger catalysts for multi-bagger runs.</p><p>Price is $10.08, trading below the 10-day MA ($10.1).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($10.09). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $10.06 — $10.19. Stock is at 15% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $10.07 | Resistance at $10.14, $10.19</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $10.08, stop $9.07 (-10%), target $15.12 (+50%). Daily range: $10.08–$10.1.</p><p>SCORE: 57.6/100 [INTRADAY] — Volume: 16.6/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 1/5</p><p>Price-volume divergence: volume spiking while price DOWN — possible accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#15</div>
+                <div class="card-ticker">
+                    <strong>RKDA</strong>
+                    <span class="card-name">Arcadia Biosciences, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
+                </div>
+                <div class="card-price">$2.17</div>
+                <div class="card-score score-mid">57.3</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">3.9x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+6.9%</div>
+                <div class="card-flags"><span class="flag">Volume spike (3.941047503045067x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:56 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:13; background:#00d4aa; border-radius:3px;" title="Volume: 5.3/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:60; background:#ffd700; border-radius:3px;" title="Divergence: 12.0/20 pts"></div>
+                <div style="flex-grow:100; background:#ff6b6b; border-radius:3px;" title="Momentum: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:100; background:#9b59b6; border-radius:3px;" title="Float: 5/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">5.3</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">12.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 5 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$4.7M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$1.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">9.5%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">129K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">33K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.54 — $6.71</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$2.17</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.95</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$3.26</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.16, $2.25, $1.76<br/>Resistance: $2.23, $2.0, $2.37</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 129K shares today vs. 33K average (3.9x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume represents 9.5% of total float — notable concentration. If sustained or grows, look for acceleration.</p><p>Very low float: only $1.4M shares. Even moderate buying pressure can cause outsized moves.</p><p>Micro-cap at $4.7M. High risk, high reward potential.</p><p>Price is $2.17, trading above the 10-day MA ($1.97) and above the 50-day MA ($2.05).</p><p>Trading ABOVE Typical Price ($2.09) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $1.54 — $6.71. Stock is at 12% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $2.16, $2.25, $1.76 | Resistance at $2.23, $2.0, $2.37</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $2.17, stop $1.95 (-10%), target $3.26 (+50%). Daily range: $1.9–$2.2.</p><p>SCORE: 57.3/100 [INTRADAY] — Volume: 5.3/40 | Acceleration: 15/15 | Divergence: 12.0/20 | Momentum: 15/15 | Stage: 5/5 | Float: 5/5</p><p>Multi-day buildup: 5 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EXTENDED">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#16</div>
+                <div class="card-ticker">
+                    <strong>VRA</strong>
+                    <span class="card-name">Vera Bradley, Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#ff6b6b;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EXTENDED</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$3.27</div>
+                <div class="card-score score-mid">55.9</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">14.1x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+31.3%</div>
+                <div class="card-flags"><span class="flag">EXTREME VOL SPIKE (14.073468035773434x avg)</span><span class="flag">Vol increasing 4 days straight</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:69; background:#00d4aa; border-radius:3px;" title="Volume: 27.9/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:0; background:#ffd700; border-radius:3px;" title="Divergence: 0.0/20 pts"></div>
+                <div style="flex-grow:80; background:#ff6b6b; border-radius:3px;" title="Momentum: 12/15 pts"></div>
+                <div style="flex-grow:0; background:#a29bfe; border-radius:3px;" title="Stage: 0/5 pts"></div>
+                <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">27.9</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
                     <div style="color:#636e72;font-size:10px;">Accel / 15</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
                     <div style="color:#ffd700;font-size:14px;font-weight:bold;">0.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">12</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">1</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 3 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$91.4M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$19.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">15.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">3.0M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">211K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.39 — $3.6</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$3.27</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.94</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$4.9</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $2.54, $2.44, $2.1<br/>Resistance: $3.25, $2.92, $2.8</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p><strong>VOLUME ALERT:</strong> VRA traded 3.0M shares today — that&#x27;s 14.1x the 10-day average of 211K. This extreme spike in a low-float name often means someone knows something.</p><p>Volume has been climbing for 4 consecutive days — building volume before news is the pattern to watch.</p><p>Volume represents 15.2% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Market cap is $91.4M — larger end of target range.</p><p>Price is $3.27, trading above the 10-day MA ($2.67) and above the 50-day MA ($2.69).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($3.28). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $1.39 — $3.6. Stock is at 85% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Key levels: Support at $2.54, $2.44, $2.1 | Resistance at $3.25, $2.92, $2.8</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $3.27, stop $2.94 (-10%), target $4.9 (+50%). Daily range: $2.97–$3.6.</p><p>SCORE: 55.9/100 [INTRADAY] — Volume: 27.9/40 | Acceleration: 15/15 | Divergence: 0.0/20 | Momentum: 12/15 | Stage: 0/5 | Float: 1/5</p><p>Multi-day buildup: 3 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#17</div>
+                <div class="card-ticker">
+                    <strong>APUS</strong>
+                    <span class="card-name">Apimeds Pharmaceuticals US, Inc</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$1.45</div>
+                <div class="card-score score-mid">53.3</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">6.0x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+8.0%</div>
+                <div class="card-flags"><span class="flag">Volume spike (6.01x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:56 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:30; background:#00d4aa; border-radius:3px;" title="Volume: 12.3/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:60; background:#ffd700; border-radius:3px;" title="Divergence: 12.0/20 pts"></div>
+                <div style="flex-grow:53; background:#ff6b6b; border-radius:3px;" title="Momentum: 8/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">12.3</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">12.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">8</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">1</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 2 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$18.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$12.6M (est)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">1.2%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">154K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">26K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$0.95 — $4.03</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$1.45</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.3</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$2.17</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.42, $1.55, $1.56<br/>Resistance: $1.45, $1.75, $1.99</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 154K shares today vs. 26K average (6.0x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Float is $12.6M (est) — manageable, but heavier than ideal 3-10M range. Will need stronger catalysts for multi-bagger runs.</p><p>Small cap at $18.2M. Catalysts can move the needle.</p><p>Price is $1.45, trading above the 10-day MA ($1.34) and below the 50-day MA ($1.57).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($1.51). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $0.95 — $4.03. Stock is at 16% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $1.42, $1.55, $1.56 | Resistance at $1.45, $1.75, $1.99</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $1.45, stop $1.3 (-10%), target $2.17 (+50%). Daily range: $1.4–$1.68.</p><p>SCORE: 53.3/100 [INTRADAY] — Volume: 12.3/40 | Acceleration: 15/15 | Divergence: 12.0/20 | Momentum: 8/15 | Stage: 5/5 | Float: 1/5</p><p>Multi-day buildup: 2 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#18</div>
+                <div class="card-ticker">
+                    <strong>NVNI</strong>
+                    <span class="card-name">Nvni Group Limited</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
+                </div>
+                <div class="card-price">$1.31</div>
+                <div class="card-score score-mid">52.3</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">5.1x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+0.3%</div>
+                <div class="card-flags"><span class="flag">Volume spike (5.069180990899899x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:46 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:23; background:#00d4aa; border-radius:3px;" title="Volume: 9.3/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:100; background:#ffd700; border-radius:3px;" title="Divergence: 20.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:60; background:#9b59b6; border-radius:3px;" title="Float: 3/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">9.3</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">20.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">0</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                
+                <div style="color:#ffd700;font-size:12px;margin:8px 0;padding:8px;background:#ffd70011;border-radius:4px;border-left:3px solid #ffd700;">Strong divergence signal detected</div>
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$13.2M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$7.0M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">3.6%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">251K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">49K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$1.1 — $16.4</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$1.31</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$1.18</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$1.97</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.23, $1.43, $1.45<br/>Resistance: $1.39, $1.73, $1.85</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 251K shares today vs. 49K average (5.1x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume represents 3.6% of total float — reasonable activity.</p><p>Low float at $7.0M shares — sweet spot for big moves without needing massive institutional volume.</p><p>Small cap at $13.2M. Catalysts can move the needle.</p><p>Price is $1.31, trading above the 10-day MA ($1.29) and below the 50-day MA ($1.95).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($1.33). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $1.1 — $16.4. Stock is at 1% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $1.23, $1.43, $1.45 | Resistance at $1.39, $1.73, $1.85</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $1.31, stop $1.18 (-10%), target $1.97 (+50%). Daily range: $1.29–$1.4.</p><p>SCORE: 52.3/100 [INTRADAY] — Volume: 9.3/40 | Acceleration: 15/15 | Divergence: 20.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 3/5</p><p>Price-volume divergence: volume spiking but price only 0.3% — quiet accumulation</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="MID">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#19</div>
+                <div class="card-ticker">
+                    <strong>QNTM</strong>
+                    <span class="card-name">Quantum Biopharma Ltd.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#ffd700;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">MID</span>
+                    <span style="display:inline-block;color:#636e72;font-size:13px;font-weight:bold;">— Steady</span>
+                </div>
+                <div class="card-price">$2.58</div>
+                <div class="card-score score-mid">45.9</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">5.0x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+22.9%</div>
+                <div class="card-flags"><span class="flag">Volume spike (4.9870207094525325x avg)</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:57 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:22; background:#00d4aa; border-radius:3px;" title="Volume: 8.9/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:20; background:#ffd700; border-radius:3px;" title="Divergence: 4.0/20 pts"></div>
+                <div style="flex-grow:66; background:#ff6b6b; border-radius:3px;" title="Momentum: 10/15 pts"></div>
+                <div style="flex-grow:60; background:#a29bfe; border-radius:3px;" title="Stage: 3/5 pts"></div>
+                <div style="flex-grow:100; background:#9b59b6; border-radius:3px;" title="Float: 5/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">8.9</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">4.0</div>
+                    <div style="color:#636e72;font-size:10px;">Div / 20</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff6b6b;font-size:14px;font-weight:bold;">10</div>
+                    <div style="color:#636e72;font-size:10px;">Mom / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#a29bfe;font-size:14px;font-weight:bold;">3</div>
+                    <div style="color:#636e72;font-size:10px;">Stage / 5</div>
+                </div>
+                <div style="text-align:center;">
+                    <div style="color:#9b59b6;font-size:14px;font-weight:bold;">5</div>
+                    <div style="color:#636e72;font-size:10px;">Float / 5</div>
+                </div>
+            </div>
+
+                
+                <div style="color:#00d4aa;font-size:12px;margin:8px 0;padding:8px;background:#00d4aa11;border-radius:4px;border-left:3px solid #00d4aa;">Multi-day buildup: 3 days</div>
+                
+                
+
+                <div class="card-metrics">
+                    <div class="metric">
+                        <div class="metric-label">Market Cap</div>
+                        <div class="metric-value">$9.9M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Float</div>
+                        <div class="metric-value">$3.6M</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Vol % Float</div>
+                        <div class="metric-value">20.4%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume Today</div>
+                        <div class="metric-value">730K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Avg Volume (10d)</div>
+                        <div class="metric-value">146K</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">52w Range</div>
+                        <div class="metric-value">$2.07 — $38.25</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Entry</div>
+                        <div class="metric-value">$2.58</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Stop Loss</div>
+                        <div class="metric-value negative">$2.32</div>
+                    </div>
+                    <div class="metric trade-setup">
+                        <div class="metric-label">Target</div>
+                        <div class="metric-value positive">$3.87</div>
+                    </div>
+                </div>
+
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $3.41, $3.51, $3.52<br/>Resistance: $3.86, $3.9, $4.0</p></div>
+
+                <div class="reasoning-section">
+                    <h4>Analysis & Reasoning</h4>
+                    <p>Volume is elevated: 730K shares today vs. 146K average (5.0x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume represents 20.4% of total float — massive signal. Even small catalysts can spark explosive moves.</p><p>Very low float: only $3.6M shares. Even moderate buying pressure can cause outsized moves.</p><p>Small cap at $9.9M. Catalysts can move the needle.</p><p>Price is $2.58, trading below the 10-day MA ($3.26) and below the 50-day MA ($4.91).</p><p>Trading ABOVE Typical Price ($2.55) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $2.07 — $38.25. Stock is at 1% of its range. Near the bottom — potential deep value with room to run.</p><p>Key levels: Support at $3.41, $3.51, $3.52 | Resistance at $3.86, $3.9, $4.0</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $2.58, stop $2.32 (-10%), target $3.87 (+50%). Daily range: $2.11–$2.97.</p><p>SCORE: 45.9/100 [INTRADAY] — Volume: 8.9/40 | Acceleration: 15/15 | Divergence: 4.0/20 | Momentum: 10/15 | Stage: 3/5 | Float: 5/5</p><p>Multi-day buildup: 3 consecutive elevated volume days</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" data-stage="EARLY">
+            <div class="card-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <div class="card-rank">#20</div>
+                <div class="card-ticker">
+                    <strong>PEW</strong>
+                    <span class="card-name">GrabAGun Digital Holdings Inc.</span>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <span style="display:inline-block;background:#00d4aa;color:#0a0e17;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:bold;margin-right:8px;">EARLY</span>
+                    <span style="display:inline-block;color:#00d4aa;font-size:13px;font-weight:bold;">▲ Accelerating</span>
+                </div>
+                <div class="card-price">$3.04</div>
+                <div class="card-score score-mid">42.6</div>
+                <div class="card-vol">
+                    <span class="vol-ratio-badge">5.2x vol</span>
+                </div>
+                <div style="font-size:12px;color:#636e72;min-width:60px;">+8.2%</div>
+                <div class="card-flags"><span class="flag">Volume spike (5.242898416419091x avg)</span><span class="flag">BELOW Typical Price — caution</span></div>
+                <div class="card-expand">&#9660;</div>
+            </div>
+            <div class="card-body">
+                <div class="data-freshness" style="font-size:11px;color:#636e72;padding:4px 0 8px 0;">
+                    Data as of: 2026-03-12 07:56 AM | Source: finviz+yfinance | Delayed ~15-20 min
+                </div>
+
+                <div style="display:flex;gap:2px;margin-bottom:8px;background:#0a0e17;padding:6px;border-radius:4px;height:20px;align-items:stretch;">
+                <div style="flex-grow:24; background:#00d4aa; border-radius:3px;" title="Volume: 9.6/40 pts"></div>
+                <div style="flex-grow:100; background:#ff9f43; border-radius:3px;" title="Acceleration: 15/15 pts"></div>
+                <div style="flex-grow:60; background:#ffd700; border-radius:3px;" title="Divergence: 12.0/20 pts"></div>
+                <div style="flex-grow:0; background:#ff6b6b; border-radius:3px;" title="Momentum: 0/15 pts"></div>
+                <div style="flex-grow:100; background:#a29bfe; border-radius:3px;" title="Stage: 5/5 pts"></div>
+                <div style="flex-grow:20; background:#9b59b6; border-radius:3px;" title="Float: 1/5 pts"></div>
+            </div>
+
+                <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:8px;background:#0a0e17;border-radius:4px;">
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#00d4aa;font-size:14px;font-weight:bold;">9.6</div>
+                    <div style="color:#636e72;font-size:10px;">Vol / 40</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ff9f43;font-size:14px;font-weight:bold;">15</div>
+                    <div style="color:#636e72;font-size:10px;">Accel / 15</div>
+                </div>
+                <div style="text-align:center;border-right:1px solid #1a2332;">
+                    <div style="color:#ffd700;font-size:14px;font-weight:bold;">12.0</div>
                     <div style="color:#636e72;font-size:10px;">Div / 20</div>
                 </div>
                 <div style="text-align:center;border-right:1px solid #1a2332;">
@@ -444,47 +2382,47 @@
                 <div class="card-metrics">
                     <div class="metric">
                         <div class="metric-label">Market Cap</div>
-                        <div class="metric-value">$139.8M</div>
+                        <div class="metric-value">$91.2M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Float</div>
-                        <div class="metric-value">$16.1M</div>
+                        <div class="metric-value">$19.4M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Vol % Float</div>
-                        <div class="metric-value">1.6%</div>
+                        <div class="metric-value">9.9%</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Volume Today</div>
-                        <div class="metric-value">253K</div>
+                        <div class="metric-value">1.9M</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">Avg Volume (10d)</div>
-                        <div class="metric-value">7.3M</div>
+                        <div class="metric-value">367K</div>
                     </div>
                     <div class="metric">
                         <div class="metric-label">52w Range</div>
-                        <div class="metric-value">$1.0 — $6.91</div>
+                        <div class="metric-value">$2.55 — $21.4</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Entry</div>
-                        <div class="metric-value">$5.1</div>
+                        <div class="metric-value">$3.04</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Stop Loss</div>
-                        <div class="metric-value negative">$4.59</div>
+                        <div class="metric-value negative">$2.74</div>
                     </div>
                     <div class="metric trade-setup">
                         <div class="metric-label">Target</div>
-                        <div class="metric-value positive">$7.65</div>
+                        <div class="metric-value positive">$4.56</div>
                     </div>
                 </div>
 
-                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $1.14, $1.13, $1.05<br/>Resistance: $6.91, $1.35, $1.28</p></div>
+                <div class="support-resistance-section"><h4>Key Levels</h4><p>Support: $3.04, $3.0, $2.83<br/>Resistance: $3.06, $2.93, $2.91</p></div>
 
                 <div class="reasoning-section">
                     <h4>Analysis & Reasoning</h4>
-                    <p>Volume is 253K today vs. 7.3M average (0.0x). Not a major spike yet, but passed other filters.</p><p>Market cap is $139.8M — larger end of target range.</p><p>Price is $5.1, trading above the 10-day MA ($3.0) and above the 50-day MA ($1.5).</p><p>Trading ABOVE Typical Price ($5.07) — institutional buyers supporting this level. Positive for continuation.</p><p>52-week range: $1.0 — $6.91. Stock is at 69% of its range. Near highs — momentum is strong but watch for resistance.</p><p>Key levels: Support at $1.14, $1.13, $1.05 | Resistance at $6.91, $1.35, $1.28</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $5.1, stop $4.59 (-10%), target $7.65 (+50%). Daily range: $4.72–$5.39.</p><p>SCORE: 6.0/100 [INTRADAY] — Volume: 0.0/40 | Acceleration: 0/15 | Divergence: 0.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 1/5</p>
+                    <p>Volume is elevated: 1.9M shares today vs. 367K average (5.2x). Worth watching — could be early accumulation ahead of a catalyst.</p><p>Volume has ticked up 2 days in a row. Keep on radar.</p><p>Volume represents 9.9% of total float — notable concentration. If sustained or grows, look for acceleration.</p><p>Market cap is $91.2M — larger end of target range.</p><p>Price is $3.04, trading above the 10-day MA ($2.84) and above the 50-day MA ($3.03).</p><p><strong>WARNING:</strong> Price is BELOW Typical Price ($3.1). Suggests institutional selling pressure. Wait for reclaim of Typical Price before entry.</p><p>52-week range: $2.55 — $21.4. Stock is at 3% of its range. Near the bottom — potential deep value with room to run.</p><p>Short interest is 277.0% (146.7 days to cover) — elevated. High short interest can create squeeze dynamics if positive news drops.</p><p>Key levels: Support at $3.04, $3.0, $2.83 | Resistance at $3.06, $2.93, $2.91</p><p><strong>TRADE SETUP</strong> (1:5 R/R): Entry $3.04, stop $2.74 (-10%), target $4.56 (+50%). Daily range: $3.02–$3.23.</p><p>SCORE: 42.6/100 [INTRADAY] — Volume: 9.6/40 | Acceleration: 15/15 | Divergence: 12.0/20 | Momentum: 0/15 | Stage: 5/5 | Float: 1/5</p>
                 </div>
             </div>
         </div>
